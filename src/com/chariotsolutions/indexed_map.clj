@@ -52,6 +52,8 @@
   "Stuff for ISAM maps"
   (indexed-get [_ secondary-key value] "Return vector of matching records"))
 
+(declare ->IndexedMap)
+
 (deftype IndexedMap [the-map internals]
   Seqable
   (^ISeq seq [_] (seq the-map))
