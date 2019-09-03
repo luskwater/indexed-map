@@ -2,6 +2,8 @@
   (:require [clojure.test :refer :all]
             [com.chariotsolutions.indexed-map :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
+(deftest very-simple-test
+  (testing "simple put/get of keyed value"
+    (let [uut (-> (indexed-map)
+                  (assoc :foo 12))]
+      (is (= 12 (:foo uut))))))
