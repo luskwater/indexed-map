@@ -1,6 +1,8 @@
 (ns com.chariotsolutions.indexed-map
+  (:require
+   [clojure.core.protocols :refer [IKVReduce]])
   (:import
-   (clojure.lang RT IMapEntry ISeq Associative
+   (clojure.lang IFn RT IMapEntry ISeq Associative
                  Seqable)))
 
 (defprotocol IIMInternals
@@ -81,6 +83,9 @@
   (^Associative assoc [this ^Object primary-key ^Object the-val]
    (let [new-internals (record-index internals primary-key the-val)]
      (->IndexedMap (assoc the-map primary-key the-val) new-internals)))
+  IKVReduce
+  (kv-reduce [this f ^Object init]
+    (reduce-kv f init the-map))
   Object
   (toString [_]
     (str the-map "\n" internals)))

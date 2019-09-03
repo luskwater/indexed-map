@@ -13,7 +13,8 @@
     (let [uut (-> (indexed-map)
                   (assoc :foo 12))]
       (reduce-kv (fn [init k v]
-                   (is (= 147 init))
+                   (is (= [147] init))
                    (is (= :foo k))
-                   (is (= 12 v)))
-                 147 uut))))
+                   (is (= 12 v))
+                   [148])
+                 [147] uut))))
