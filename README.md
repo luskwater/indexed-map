@@ -1,5 +1,9 @@
 # indexed-map
 
+[![Build Status](https://travis-ci.org/luskwater/indexed-map.svg?branch=master)](https://travis-ci.org/luskwater/indexed-map)
+
+[![CircleCI](https://circleci.com/gh/luskwater/indexed-map.svg?style=svg)](https://circleci.com/gh/luskwater/indexed-map)
+
 Provide indexing on data in a map
 
 ## Usage
